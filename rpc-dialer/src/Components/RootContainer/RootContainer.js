@@ -18,6 +18,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
+import { Icon } from 'react-icons-kit';
+import { users } from 'react-icons-kit/ikons/users';
+import { socialBufferOutline } from 'react-icons-kit/ionicons/socialBufferOutline'
+import { socialBuffer } from 'react-icons-kit/ionicons/socialBuffer'
+
 import './styles.scss';
 
 const drawerWidth = 240;
@@ -142,23 +147,16 @@ export default function RootContainer() {
           </IconButton>
         </div>
         <Divider />
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <ListItem>
+          <ListItem button key="Agent Desktop">
+            <ListItemIcon><Icon icon={socialBufferOutline}/></ListItemIcon>
+            <ListItemText primary="Agent Desktop"/>
+          </ListItem>
+          <ListItem button key="Teams">
+            <ListItemIcon><Icon icon={users}/></ListItemIcon>
+            <ListItemText primary="Teams"/>
+          </ListItem>
+        </ListItem>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />

@@ -5,7 +5,20 @@
 .MuiPaper-root {
   background-color: #444444 !important;
   color: white !important;
+  
   svg {
     color: white;
   }
+}
+
+.MuiListItem-root {
+  display: block !important;
+}
+
+.MuiListItemText-root{
+  display: inline-block !important;
+}
+
+.MuiListItemIcon-root {
+  display: inline-block !important;
 }

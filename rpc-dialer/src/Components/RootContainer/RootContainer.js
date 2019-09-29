@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme, fade } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,16 +17,20 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import { Icon } from 'react-icons-kit';
 import { users } from 'react-icons-kit/ikons/users';
-import { socialBufferOutline } from 'react-icons-kit/ionicons/socialBufferOutline'
-import { socialBuffer } from 'react-icons-kit/ionicons/socialBuffer'
+import { socialBufferOutline } from 'react-icons-kit/ionicons/socialBufferOutline';
+import { socialBuffer } from 'react-icons-kit/ionicons/socialBuffer';
+
+import { Panel1, Panel2 } from '../AgentDesktopView/Panels';
 
 import './styles.scss';
 
 const drawerWidth = 240;
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -86,12 +90,38 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  grow: {
+    flexGrow: 1,
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  }
 }));
 
 export default function RootContainer() {
   const classes = useStyles();
   const theme = useTheme();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleProfileMenuOpen = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
 
   function handleDrawerOpen() {
     setOpen(true);
@@ -100,6 +130,28 @@ export default function RootContainer() {
   function handleDrawerClose() {
     setOpen(false);
   }
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+      style={{
+        width: '200px',
+        position: 'absolute',
+        right: '0',
+        top: '40px'
+      }}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    </Menu>
+  );
 
   return (
     <div className={classes.root}>
@@ -122,9 +174,23 @@ export default function RootContainer() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <div className="company-label">
              RPC Dialer
-          </Typography>
+          </div>
+          <IconButton
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+              style={{
+                position: 'absolute',
+                right: '0',
+                marginRight: '10px'
+              }}
+            >
+              <AccountCircle />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -160,13 +226,10 @@ export default function RootContainer() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          This is where the Desktop Panel1 will go
-        </Typography>
-        <Typography paragraph>
-          This is where the Desktop panel2 will go
-        </Typography>
+        <Panel1 />
+        <Panel2 />
       </main>
+      {renderMenu}
     </div>
   );
 }

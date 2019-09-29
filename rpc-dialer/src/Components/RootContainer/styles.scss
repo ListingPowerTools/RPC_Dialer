@@ -1,3 +1,34 @@
+//This is the div within the navigation. Taking off the padding.
+.makeStyles-content-10 {
+  padding: 0 !important;
+}
+
+.MuiPaper-root svg {
+  font-size: 18px !important;
+}
+
+.makeStyles-toolbar-9 {
+  min-height: 45px !important;
+}
+.MuiToolbar-regular {
+  min-height: 45px !important;
+}
+
+.makeStyles-drawerClose-8 {
+  max-width: 45px !important;
+}
+
+.MuiListItemIcon-root {
+  margin-left: 13px !important;
+  padding-top: 10px !important;
+}
+
+.MuiListItem-gutters {
+  padding-top: 0px !important;
+  padding-left: 0px !important;
+  width: 100vw !important;
+}
+
 .MuiToolbar-root {
   background-color: #222222 !important;
 }
@@ -21,4 +52,21 @@
 
 .MuiListItemIcon-root {
   display: inline-block !important;
+}
+
+//on-click user menu
+.MuiPaper-root .MuiMenu-paper .MuiPaper-elevation8 .MuiPopover-paper .MuiPaper-rounded {
+  top: 0px !important;
+}
+
+//Custom css
+
+.company-label {
+  font-size: 16px;
+}
+
+.user-section {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
 }

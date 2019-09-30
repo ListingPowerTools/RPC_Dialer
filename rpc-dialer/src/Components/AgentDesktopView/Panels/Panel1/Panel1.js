@@ -1,11 +1,12 @@
 import React from 'react'
+import  Panel1Content from './Panel1Content'
 import './styles.scss'
 
 class Panel1 extends React.Component {
   render() {
     return (
       <div className='panel-one'>
-        <p>Panel 1</p>
+        <Panel1Content />
       </div>
     )
   }

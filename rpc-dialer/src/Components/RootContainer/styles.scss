@@ -1,4 +1,33 @@
-//This is the div within the navigation. Taking off the padding.
+.RootContainer-root-1 {
+  header {
+    box-shadow: none !important;
+  }
+}
+.RootContainer-content-10 {
+  padding: 0 !important;
+}
+
+.RootContainer-toolbar-9 {
+  min-height: 45px !important;
+}
+
+.RootContainer-drawerClose-8 {
+    max-width: 52px !important;
+}
+
+.MuiDivider-root {
+  display: none !important;
+}
+
+.MuiToolbar-gutters {
+  padding-left: 0 !important;
+}
+
+.RootContainer-menuButton-4 {
+  margin-left: 0 !important;
+}
+
+//OLD STYLES NOT IN USE
 .makeStyles-content-10 {
   padding: 0 !important;
 }
@@ -19,11 +48,13 @@
 }
 
 .MuiListItemIcon-root {
-  margin-left: 13px !important;
+  margin-left: 15px !important;
   padding-top: 10px !important;
+  display: inline-block !important;
 }
 
 .MuiListItem-gutters {
+  margin-top: 3px !important;
   padding-top: 0px !important;
   padding-left: 0px !important;
   width: 100vw !important;
@@ -47,10 +78,6 @@
 }
 
 .MuiListItemText-root{
-  display: inline-block !important;
-}
-
-.MuiListItemIcon-root {
   display: inline-block !important;
 }
 

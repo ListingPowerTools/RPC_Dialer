@@ -1,3 +1,3 @@
-import RootContainer from './RootContainer'
+import Wrapper from './Wrapper'
 
-export default RootContainer
+export default Wrapper

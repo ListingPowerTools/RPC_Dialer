@@ -1,16 +1,11 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import {
+  createStore,
+  applyMiddleware
+} from 'redux'
+
 import thunk from 'redux-thunk'
+import rootReducer from './store/reducers'
 
-const initialWorkerState = {
-  activity: 'Offline',
-  available_activities: [
-    'Offline',
-    'Available',
-    'Unavailable',
-    'Break'
-  ]
-}
+const store = applyMiddleware(thunk)(createStore)(rootReducer)
 
-const store = applyMiddleware(thunk)(createStore)(combineReducers({
-  worker: modelReducer('worker', initialWorkerState)
-}))
+export default store

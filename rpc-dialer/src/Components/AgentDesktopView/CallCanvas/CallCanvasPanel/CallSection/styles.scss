@@ -1,0 +1,107 @@
+.call-container {
+  background-color: #FFFFFF;
+  border-right: 1px solid #cecece;
+}
+
+.call-top-section {
+  padding: 28px;
+}
+
+.top-left {
+  display: inline-block;
+  margin-left: 12px;
+
+  .number {
+    font-weight: 600;
+  }
+
+  .text-time {
+    font-size: 11px;
+  }
+}
+
+.top-right {
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+
+  button {
+    margin-right: 14px;
+    height: 28px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    padding: 0px 16px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    background: linear-gradient(to top, #e03434, #e03434);
+    outline: none;
+    border-radius: 100px;
+
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(to top, rgb(211, 47, 47), rgb(211, 47, 47));
+    }
+  }
+}
+
+.call-middle-section {
+  margin-top: 40px;
+  margin-bottom: 32px;
+
+  .call-status {
+    font-size: 16px;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .icon-section {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: fit-content;
+    color: #1976D2;
+  }
+
+  .number {
+    font-weight: 600;
+    color: black;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .text-time {
+    font-size: 11px;
+    color: black;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .MuiSvgIcon-root {
+    font-size: 140px !important;
+  }
+
+  .hold-button {
+    color: rgb(185, 185, 185);
+    margin: 0 auto;
+    width: fit-content;
+    margin-top: 30px;
+
+    .MuiSvgIcon-root {
+      font-size: 50px !important;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(151, 151, 151);
+    }
+  }
+}
+
+.call-buttons-section {
+  text-align: center;
+  padding: 14px;
+}

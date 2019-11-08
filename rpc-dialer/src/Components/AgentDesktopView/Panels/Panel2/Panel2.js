@@ -1,11 +1,19 @@
 import React from 'react'
 import './styles.scss'
 
+import CrmContainer from '../../CRMContainer'
+
 class Panel2 extends React.Component {
   render() {
+    let crmWindow;
+
+    if (1 == 1) {
+      crmWindow = <CrmContainer />
+    }
+
     return (
       <div className='panel-two'>
-        <p>Panel 2</p>
+        {crmWindow}
       </div>
     )
   }

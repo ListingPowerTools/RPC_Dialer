@@ -1,0 +1,38 @@
+.mute-button {
+  display: inline-block;
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  font-size: 22px;
+  background-color: #d1d0d0;
+  color: white;
+  margin-right: 12px;
+
+  &:hover {
+    background-color: #bbbaba;
+    cursor: pointer;
+  }
+
+  .MuiSvgIcon-root {
+    margin-top: 12px;
+  }
+}
+
+.end-call-button {
+  display: inline-block;
+  height: 47px;
+  width: 47px;
+  border-radius: 50%;
+  font-size: 22px;
+  background-color: #d02323;
+  color: white;
+
+  &:hover {
+    background-color: #A92525;
+    cursor: pointer;
+  }
+
+  .MuiSvgIcon-root {
+    margin-top: 12px;
+  }
+}
